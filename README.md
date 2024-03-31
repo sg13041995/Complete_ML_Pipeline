@@ -1,1 +1,1 @@
-# GenericProjectStructure_ML
+# ProjectPipeline_ML
