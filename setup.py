@@ -3,7 +3,7 @@ from setuptools import find_packages,setup
 # to mention the List as a return type of a function
 from typing import List
 
-# require to append the string at the end of the list of requirements read from requirements.txt
+# require to remove the string at the end of the list of requirements read from requirements.txt
 HYPEN_E_DOT='-e .'
 
 # read requirements from requirements.txt
@@ -13,7 +13,9 @@ def get_requirements(file_path:str)->List[str]:
     '''
     requirements=[]
     with open(file_path) as file_obj:
+        # Reading lines
         requirements=file_obj.readlines()
+        # Getting rid of the new line characters
         requirements=[req.replace("\n","") for req in requirements]
 
         if HYPEN_E_DOT in requirements:
